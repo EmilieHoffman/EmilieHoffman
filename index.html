@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMILIE HOFFMAN DESIGN STUDIO LLC — Specialized Design Services</title>
+  <meta name="description" content="Specialized design studio delivering compliant, conversion-ready brand systems, accessible product UI, and environmental graphics for regulated and technical industries." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b12;
+      --ink:#e8e8ff;
+      --muted:#a8a8c6;
+      --accent:#b26cff;
+      --accent-2:#5be5d5;
+      --card:#121222;
+      --line:#24243a;
+      --success:#8fe388;
+      --warning:#ffd275;
+      --shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+      --radius:18px;
+      --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      background:radial-gradient(1200px 600px at 70% -10%, rgba(178,108,255,.22), transparent),
+                 radial-gradient(900px 400px at 20% 0%, rgba(91,229,213,.14), transparent),
+                 var(--bg);
+      color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      line-height:1.55; margin:0;
+    }
+    a{color:var(--accent-2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background:linear-gradient(180deg, rgba(11,11,18,.8), rgba(11,11,18,.35)); z-index:10; border-bottom:1px solid var(--line)}
+    nav{max-width:var(--max); margin:auto; display:flex; align-items:center; gap:16px; padding:12px 20px}
+    nav .brand{font-weight:800; letter-spacing:.4px}
+    nav .brand small{display:block; font-weight:400; color:var(--muted); letter-spacing:0}
+    nav ul{margin-left:auto; display:flex; gap:18px; list-style:none; padding:0}
+    nav a.btn{padding:10px 14px; background:linear-gradient(135deg, var(--accent), #6a7dff); color:#fff; border-radius:12px; box-shadow:var(--shadow)}
+    .wrap{max-width:var(--max); margin:auto; padding:64px 20px}
+    .section{padding:56px 0}
+    h1,h2,h3{line-height:1.15; margin:0 0 12px}
+    h2{font-size:36px}
+    p.lead{font-size:20px; color:#f3f3ff; opacity:.9}
+    .muted{color:var(--muted)}
+    .grid{display:grid; gap:22px}
+    @media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr)} .grid-2{grid-template-columns:repeat(2,1fr)} }
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.02); color:var(--muted); font-size:13px}
+    .hero{padding:96px 0}
+    .hero h1{font-size:56px; letter-spacing:-.5px}
+    .hero .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border-radius:14px; border:1px solid var(--line); color:#fff}
+    .btn.primary{background:linear-gradient(135deg, var(--accent), #6a7dff)}
+    .btn.ghost{background:transparent}
+    .tag{font-size:12px; color:var(--muted)}
+    .stat{display:flex; gap:12px; align-items:center}
+    .stat b{font-size:22px}
+    .image-block{position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid var(--line); background:#0f0f1c}
+    .image-block img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(105%) contrast(102%) brightness(92%)}
+    .image-block .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(11,11,18,.75) 65%);}
+    .image-block .caption{position:absolute; left:20px; right:20px; bottom:18px; padding:16px; border-radius:14px; background:rgba(18,18,34,.72); border:1px solid var(--line)}
+    .steps{counter-reset:step}
+    .steps li{list-style:none; margin:0 0 14px; padding-left:56px; position:relative}
+    .steps li::before{counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, var(--accent), #6a7dff); color:#fff; font-weight:700}
+    form{display:grid; gap:14px}
+    input,textarea,select{width:100%; padding:14px 14px; background:#0f0f1c; color:#fff; border:1px solid var(--line); border-radius:12px; outline:none}
+    textarea{min-height:120px; resize:vertical}
+    .helper{font-size:13px; color:var(--muted)}
+    footer{border-top:1px solid var(--line); background:#0b0b12}
+    .kpis{display:flex; gap:22px; flex-wrap:wrap; margin-top:18px}
+    .kpis .card{display:flex; gap:12px; align-items:center}
+
+    /* success message for the form */
+    .success-message{
+      display:none;
+      margin-top:12px;
+      padding:14px 16px;
+      background:var(--success);
+      color:#0b3210;
+      border-radius:12px;
+      font-weight:700;
+      box-shadow:var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header>
+    <nav aria-label="Main">
+      <div class="brand">
+        EMILIE HOFFMAN DESIGN STUDIO LLC
+        <small>Specialized Design Services</small>
+      </div>
+      <ul>
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#proof">Why Us</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#contact" class="btn">Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary">Start a Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 1. HERO -->
+  <section class="wrap hero" id="home">
+    <span class="chip" aria-label="studio intro">Crystal Lake, IL • Since 2016</span>
+    <h1>Design for the complex — made simple, compliant & beautiful.</h1>
+    <p class="lead">We specialize in translating regulated, technical, and data-heavy ideas into brands, interfaces, and spaces that people instantly understand. From FDA-ready packaging to WCAG-compliant product UI, we build design that clears audits and drives adoption.</p>
+    <div class="cta">
+      <a href="#contact" class="btn primary">Book a free scoping call</a>
+      <a href="#services" class="btn ghost">Explore services</a>
+    </div>
+    <div class="kpis">
+      <div class="card stat" aria-label="avg lead time"><b>10–20 days</b><span class="tag">to first deliverables</span></div>
+      <div class="card stat" aria-label="on-time rate"><b>97%</b><span class="tag">on-time handoffs</span></div>
+      <div class="card stat" aria-label="accessibility"><b>WCAG 2.2</b><span class="tag">accessibility standard</span></div>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT -->
+  <section class="wrap section" id="about">
+    <h2>Not Your Average “Design Shop”</h2>
+    <p>Based in Crystal Lake, Illinois, EMILIE HOFFMAN DESIGN STUDIO LLC partners with healthcare, fintech, manufacturing, and civic teams that operate under real-world constraints. We turn requirements into creative direction and compliance into compelling experiences. Our work spans brand systems, digital product UI, environmental/wayfinding graphics, and packaging & labeling audits. We are used to redlines from legal, feedback from clinicians, and stakeholder boards that need clear rationales. Every deliverable ships with documentation, spec sheets, and developer-ready tokens so execution is as smooth as the concept.</p>
+  </section>
+
+  <!-- 3. SERVICES -->
+  <section class="wrap section" id="services">
+    <h2>Specialized Services That Move The Needle</h2>
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>Regulated Packaging & Labeling</h3>
+        <p>We design and audit packaging for medical devices, supplements, and industrial products, aligning structure, copy, and hierarchy with CFR/FDA and EU MDR expectations. You get master artwork, dielines, and language matrices that scale. We also create launch-ready imagery for retail and e-commerce.</p>
+      </article>
+      <article class="card">
+        <h3>Accessible Product UI & Design Systems</h3>
+        <p>From dashboards to data-entry workflows, we craft interfaces that balance speed with safety. Our systems include WCAG 2.2 contrast tokens, keyboard paths, and error-state patterns, plus Figma libraries and developer docs. We regularly collaborate with QA to validate real-world edge cases.</p>
+      </article>
+      <article class="card">
+        <h3>Wayfinding & Environmental Graphics</h3>
+        <p>Hospitals, campuses, and civic spaces benefit from clear, anxiety-reducing navigation. We map decision points, plan sign families, and prototype sight-lines on location. Fabrication-ready drawing sets include materials, mounting details, ADA type specs, and phasing plans for contractors.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. IMAGE / WHY US -->
+  <section class="wrap section" id="proof">
+    <h2>Why Teams Choose Our Studio</h2>
+    <div class="grid grid-2">
+      <figure class="image-block" aria-labelledby="adv1">
+        <img alt="Design system tokens and documentation on a laptop screen" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" />
+        <div class="overlay"></div>
+        <figcaption class="caption" id="adv1">
+          <strong>Compliance without creative compromise.</strong><br/>
+          We speak both design and regulation. Our deliverables include rationale callouts mapped to requirements so legal and engineering can sign off faster.
+        </figcaption>
+      </figure>
+      <div class="card">
+        <h3>Measurable outcomes, not decorative assets</h3>
+        <p>We tie design to operational metrics—reduced mis-fills on labels, fewer help-desk tickets after UI updates, shorter dwell times at decision points. Each project ends with a two-page impact summary and next-step backlog your team can act on immediately.</p>
+        <ul>
+          <li>Label error reduction targets (with before/after audits)</li>
+          <li>Usability benchmarks (SUS/SEQ + task success)</li>
+          <li>Field-tested hardware decals & safety icons</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. IMAGE / OUR MISSION -->
+  <section class="wrap section" id="mission">
+    <h2>Mission & Focus</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Design that de-risks decisions</h3>
+        <p>Our mission is to make critical information unmistakable at the moment it matters—on a crowded shelf, in a busy nurses’ station, or inside a data-dense application. We believe clarity is a safety feature and beauty is a multiplier. We pursue both.</p>
+        <p class="muted">Industries we serve: Healthcare & MedTech, Fintech & Insurance, Manufacturing & Industrial, Higher-Ed & Civic.</p>
+      </div>
+      <figure class="image-block" aria-labelledby="adv2">
+        <img alt="Clear wayfinding signage in a hospital corridor" src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop" />
+        <div class="overlay"></div>
+        <figcaption class="caption" id="adv2">
+          <strong>Field-ready from day one.</strong><br/>
+          We prototype in the environment, not just in slides—testing sight-lines, glint, and lighting to ensure the final build performs outside the conference room.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 6. PROCESS -->
+  <section class="wrap section" id="process">
+    <h2>How We Work — A Three-Step Path</h2>
+    <ol class="steps">
+      <li>
+        <h3>Scope & Evidence</h3>
+        <p>We clarify goals, constraints, and regulators, then gather artifacts—SOPs, audit notes, device photos, analytics. You receive a short plan with success metrics and an exact timeline.</p>
+      </li>
+      <li>
+        <h3>Design Sprints with Checkpoints</h3>
+        <p>Weekly drops include options, rationales, and live prototypes. Stakeholders weigh trade-offs early while we run quick tests for accessibility, readability, and task success.</p>
+      </li>
+      <li>
+        <h3>Handover & Support</h3>
+        <p>Finals ship as production-ready files: print-spec artwork, Figma libraries, token JSON, and sign schedules. We support vendors and developers until your solution is live.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 7. CONTACT FORM (+ helpful phrases) -->
+  <section class="wrap section" id="contact">
+    <h2>Tell Us What You Need</h2>
+    <p class="muted">Use the phrases below or write your own—clarity helps us quote faster.</p>
+    <div class="grid grid-2">
+      <form id="contactForm" aria-label="Contact form">
+        <label>Full name<input type="text" name="name" placeholder="Your name" required></label>
+        <label>Work email<input type="email" name="email" placeholder="you@company.com" required></label>
+        <label>Company / Organization<input type="text" name="company" placeholder="Company name"></label>
+        <label>What are you interested in?
+          <select name="service">
+            <option>Regulated packaging & labeling</option>
+            <option>Accessible product UI & design system</option>
+            <option>Wayfinding & environmental graphics</option>
+            <option>Other / not listed</option>
+          </select>
+        </label>
+        <label>Your message
+          <textarea name="message" placeholder="Briefly describe the challenge, deadlines, and any regulators involved (FDA, WCAG, ADA, EU MDR, etc.)."></textarea>
+        </label>
+        <button type="submit" class="btn primary">Send request</button>
+        <p class="helper">By submitting, you agree that we may contact you about your project.</p>
+        <!-- Success notification -->
+        <div id="successMessage" class="success-message" role="status" aria-live="polite">
+          ✅ Thank you! Your request has been sent successfully.
+        </div>
+      </form>
+      <div class="card">
+        <h3>Helpful Phrases You Can Paste</h3>
+        <ul>
+          <li>“We need an FDA-ready label update for a Class II device by the end of Q4.”</li>
+          <li>“Audit our product UI against WCAG 2.2 and deliver a tokenized design system.”</li>
+          <li>“Create a campus wayfinding plan with phased installation drawings.”</li>
+          <li>“Redesign a data-heavy dashboard; success = fewer support tickets & faster task time.”</li>
+          <li>“Packaging localization for EN/ES/FR with a master artwork and copy matrix.”</li>
+          <li>“We have vendor constraints—please include fabrication notes and mounting details.”</li>
+        </ul>
+        <p class="muted">Prefer email? Write to <a href="mailto:emilie@hoffmandesignstudio.info">emilie@hoffmandesignstudio.info</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT DETAILS -->
+  <footer class="wrap section" id="footer">
+    <h2>Contact & Company Info</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Studio Address</h3>
+        <p>233 N Main St<br/>Crystal Lake, IL, 60014-4434<br/>United States</p>
+      </div>
+      <div class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:emilie@hoffmandesignstudio.info">emilie@hoffmandesignstudio.info</a></p>
+        <p class="muted">We reply within one business day.</p>
+      </div>
+      <div class="card">
+        <h3>Working Hours</h3>
+        <p>Mon–Fri · 9:00–17:00 CT</p>
+        <p class="muted">Remote collaboration across U.S. time zones.</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:22px">© <span id="year"></span> EMILIE HOFFMAN DESIGN STUDIO LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // form submission notification (no backend; demo only)
+    const form = document.getElementById('contactForm');
+    const successEl = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();                     // stop page reload
+      successEl.style.display = 'block';      // show notification
+      form.reset();                           // clear the form
+      successEl.scrollIntoView({behavior:'smooth', block:'center'});
+
+      // hide after 6 seconds (optional)
+      setTimeout(()=>{ successEl.style.display = 'none'; }, 6000);
+    });
+  </script>
+</body>
+</html>
